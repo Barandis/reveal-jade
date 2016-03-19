@@ -1,0 +1,18 @@
+{
+  "name": "reveal",
+  "version": "1.0.0",
+  "description": "Gulp-based reveal.js clone incorprating Jade for authoring",
+  "keywords": [
+    "reveal",
+    "reveal.js",
+    "jade",
+    "gulp",
+    "presentation"
+  ],
+  "author": "Thomas Otterson",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "require-dir": "^0.3.0"
+  }
+}
