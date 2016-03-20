@@ -48,5 +48,10 @@ module.exports = {
     linenos: false
   },
 
-  lsc: {}
+  lsc: {},
+
+  jade: {
+    pretty: true,
+    compileDebug: false
+  }
 };
