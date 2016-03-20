@@ -6,7 +6,7 @@ const config = require('../config');
 
 gulp.task('present', [ 'serve' ]);
 gulp.task('develop', done => {
-  run('build', ['watch', 'serve']);
+  run([ 'build:common', 'build:topic' ], [ 'watch', 'serve' ]);
 });
 
 gulp.task('default', [ 'present' ]);
