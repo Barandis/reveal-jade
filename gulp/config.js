@@ -46,5 +46,7 @@ module.exports = {
   stylus: {
     compress: false,
     linenos: false
-  }
+  },
+
+  lsc: {}
 };
