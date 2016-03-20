@@ -111,14 +111,14 @@ So a good example `index.jade` file might look like this:
 extends ../../resources/layout/presentation
 
 block title
-  title Example Jade/Reveal.js Presentation
-  meta(name="description", content="Example presentation using Jade rather than HTML for Reveal.js")
+  title Example Reveal-Jade Presentation
+  meta(name="description", content="Example presentation using Jade rather than HTML for reveal.js")
   meta(name="author", content="Thomas Otterson")
 
 block slides
   +slide
-    h1 Reveal.js + Jade
-    h3 Because writing in HTML is a pain and Markdown doesn't support all the cool Reveal.js features
+    h1 Reveal-Jade
+    h3 Because writing in HTML is a pain and you can't use all of the cool reveal.js features in Markdown
     p
       small.
         Created by #[a(href="http://hakim.se") Hakim El Hattab] / 
