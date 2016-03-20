@@ -17,7 +17,7 @@ function logDeleted(paths) {
 }
 
 gulp.task('clean', done => {
-  const path = config.topic === '' ? `${config.build.root}/**` : `${config.build.root}/${config.topic}/**`;
+  const path = config.topic === '' ? `${config.build.root}/**` : `${config.build.topic}/**`;
   del(path, { force: true }).then(paths => {
     logDeleted(paths);
     done();

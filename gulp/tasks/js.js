@@ -1,33 +1,41 @@
 'use strict';
 
-const gulp   = require('gulp');
-const lsc    = require('gulp-livescript');
-const config = require('../config');
+const gulp    = require('gulp');
+const plumber = require('gulp-plumber');
+const lsc     = require('gulp-livescript');
+const config  = require('../config');
+
+function handler(self) {
+  return err => {
+    console.log(err);
+    self.emit('end');
+  };
+}
 
 gulp.task('js:common:js', () => {
   return gulp.src(`${config.src.js}/**/*.js`)
+    .pipe(plumber({ handleError: handler(this) }))
     .pipe(gulp.dest(config.build.js));
 });
 
 gulp.task('js:common:ls', () => {
   return gulp.src(`${config.src.js}/**/*.ls`)
+    .pipe(plumber({ handleError: handler(this) }))
     .pipe(lsc(config.lsc))
     .pipe(gulp.dest(config.build.js));
 });
 
 gulp.task('js:topic:js', () => {
-  const src = config.topic === '' ? `${config.base}/**/*.js` : `${config.base}/${config.topic}/**/*.js`;
-  const dest = config.topic === '' ? config.build.root : `${config.build.root}/${config.topic}`;
-  return gulp.src(src)
-    .pipe(gulp.dest(dest));
+  return gulp.src(`${config.src.topic}/**/*.js`)
+    .pipe(plumber({ handleError: handler(this) }))
+    .pipe(gulp.dest(config.build.topic));
 });
 
 gulp.task('js:topic:ls', () => {
-  const src = config.topic === '' ? `${config.base}/**/*.ls` : `${config.base}/${config.topic}/**/*.ls`;
-  const dest = config.topic === '' ? config.build.root : `${config.build.root}/${config.topic}`;
-  return gulp.src(src)
+  return gulp.src(`${config.src.topic}/**/*.js`)
+    .pipe(plumber({ handleError: handler(this) }))
     .pipe(lsc(config.lsc))
-    .pipe(gulp.dest(dest));
+    .pipe(gulp.dest(config.build.topic));
 });
 
 gulp.task('js:common', [ 'js:common:js', 'js:common:ls' ]);

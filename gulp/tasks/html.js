@@ -1,22 +1,28 @@
 'use strict';
 
-const gulp   = require('gulp');
-const jade   = require('gulp-jade');
-const config = require('../config');
+const gulp    = require('gulp');
+const plumber = require('gulp-plumber');
+const jade    = require('gulp-jade');
+const config  = require('../config');
+
+function handler(self) {
+  return err => {
+    console.log(err);
+    self.emit('end');
+  };
+}
 
 gulp.task('html:topic:html', () => {
-  const src = config.topic === '' ? `${config.base}/**/*.html` : `${config.base}/${config.topic}/**/*.html`;
-  const dest = config.topic === '' ? config.build.root : `${config.build.root}/${config.topic}`;
-  return gulp.src(src)
-    .pipe(gulp.dest(dest));
+  return gulp.src(`${config.src.topic}/**/*.html`)
+    .pipe(plumber({ handleError: handler(this) }))
+    .pipe(gulp.dest(config.build.topic));
 });
 
 gulp.task('html:topic:jade', () => {
-  const src = config.topic === '' ? `${config.base}/**/*.jade` : `${config.base}/${config.topic}/**/*.jade`;
-  const dest = config.topic === '' ? config.build.root : `${config.build.root}/${config.topic}`;
-  return gulp.src(src)
+  return gulp.src(`${config.src.topic}/**/*.jade`)
+    .pipe(plumber({ handleError: handler(this) }))
     .pipe(jade(config.jade))
-    .pipe(gulp.dest(dest));
+    .pipe(gulp.dest(config.build.topic));
 });
 
 gulp.task('html:topic', [ 'html:topic:html', 'html:topic:jade' ]);

@@ -32,7 +32,7 @@ module.exports = {
     assets: './assets',
     css: './src/css',
     js: './src/js',
-    topic: `${argv.base}/${argv.topic}`
+    topic: argv.topic === '' ? argv.base : `${argv.base}/${argv.topic}`
   },
 
   build: {
@@ -40,7 +40,7 @@ module.exports = {
     assets: './build',
     css: './build/css',
     js: './build/js',
-    topic: `.'build/topics/${argv.topic}`
+    topic: argv.topic === '' ? './build/topics' : `./build/topics/${argv.topic}`
   },
 
   stylus: {

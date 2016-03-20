@@ -9,28 +9,14 @@ gulp.task('assets:common', () => {
 });
 
 gulp.task('assets:topic', () => {
-  const basePath = config.base;
-  const topicPath = `${config.base}/${config.topic}`;
-  const src = config.topic === '' ? 
-    [ 
-      `${basePath}/**/*`,
-      `!${basePath}/**/*.js`,
-      `!${basePath}/**/*.ls`,
-      `!${basePath}/**/*.css`,
-      `!${basePath}/**/*.styl`,
-      `!${basePath}/**/*.html`,
-      `!${basePath}/**/*.jade` 
-    ] : 
-    [ 
-      `${topicPath}/**/*`,
-      `!${topicPath}/**/*.js`,
-      `!${topicPath}/**/*.ls`,
-      `!${topicPath}/**/*.css`,
-      `!${topicPath}/**/*.styl`,
-      `!${topicPath}/**/*.html`,
-      `!${topicPath}/**/*.jade`
-    ];
-  const dest = config.topic === '' ? config.build.root : `${config.build.root}/${config.topic}`;
-  return gulp.src(src)
-    .pipe(gulp.dest(dest));
+  return gulp.src([ 
+      `${config.src.topic}/**/*`,
+      `!${config.src.topic}/**/*.js`,
+      `!${config.src.topic}/**/*.ls`,
+      `!${config.src.topic}/**/*.css`,
+      `!${config.src.topic}/**/*.styl`,
+      `!${config.src.topic}/**/*.html`,
+      `!${config.src.topic}/**/*.jade`
+    ])
+    .pipe(gulp.dest(config.build.topic));
 });
