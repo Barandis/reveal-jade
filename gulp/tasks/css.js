@@ -39,4 +39,3 @@ gulp.task('css:topic:stylus', () => {
 
 gulp.task('css:common', [ 'css:common:css', 'css:common:stylus' ]);
 gulp.task('css:topic', [ 'css:topic:css', 'css:topic:stylus' ]);
-gulp.task('css', [ 'css:topic' ]);

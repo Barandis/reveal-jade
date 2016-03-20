@@ -20,4 +20,3 @@ gulp.task('html:topic:jade', () => {
 });
 
 gulp.task('html:topic', [ 'html:topic:html', 'html:topic:jade' ]);
-gulp.task('html', [ 'html:topic' ]);

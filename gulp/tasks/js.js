@@ -32,4 +32,3 @@ gulp.task('js:topic:ls', () => {
 
 gulp.task('js:common', [ 'js:common:js', 'js:common:ls' ]);
 gulp.task('js:topic', [ 'js:topic:js', 'js:topic:ls' ]);
-gulp.task('js', [ 'js:topic' ]);
