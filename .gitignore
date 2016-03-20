@@ -24,6 +24,9 @@ test/coverage
 build
 test/build
 
+# Topics are not a part of the base build and should be under separate source control
+topics
+
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
