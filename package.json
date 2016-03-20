@@ -1,5 +1,5 @@
 {
-  "name": "reveal-gulp",
+  "name": "reveal-jade",
   "version": "1.0.0",
   "description": "Gulp-based reveal.js clone incorprating Jade for authoring",
   "keywords": [
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Barandis/reveal-gulp.git"
+    "url": "https://github.com/Barandis/reveal-jade.git"
   },
   "devDependencies": {
     "del": "^2.2.0",
