@@ -76,6 +76,9 @@ Some quick examples:
 
 * `gulp develop -t git-workflow` will build the presentation located in `./topics/git-workflow`, set a watch on its 
   files to rebuild them if they change, and open up a browser to `http://localhost:8000/topics/git-workflow`.
+* `gulp develop -b /home/user/presentations/topics -t git-workflow` will do exactly as above, except it'll build and
+  watch the presentation in `/home/user/presentations/topics/git-workflow` instead. The URL opened does not change, as
+  the files are built to the same location.
 * `gulp present` (or just `gulp`) will open the browser to `http://localhost:8000/topics`. This will display a list of
   the presentations available and allow one to be selected. Nothing will be built and no changes will be tracked.
 
@@ -137,8 +140,6 @@ elements in a slide.
 ## Known issues
 
 * Live reloading does not yet work.
-* Using a `--base` doesn't currently take account of an intermediate folder to put all of the presentations in, so it
-  doesn't act like the default.
 
 Both of these (and anything else I find) should be fixed soon.
 
