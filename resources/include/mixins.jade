@@ -1,6 +1,8 @@
+doctype html
+
 mixin slide
   section&attributes(attributes)
-    if !!attributes[data-markdown]
+    if !!attributes['data-markdown']
       script(type="text/template")
         block
     else

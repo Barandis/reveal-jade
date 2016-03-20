@@ -52,6 +52,7 @@ module.exports = {
 
   jade: {
     pretty: true,
-    compileDebug: false
+    compileDebug: false,
+    doctype: 'html'
   }
 };
