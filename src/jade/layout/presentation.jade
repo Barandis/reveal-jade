@@ -1,0 +1,83 @@
+include ../include/mixins
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+
+    //- Presentation title and metadata
+    block title
+      title Presentation Title
+      meta(name="description", content="Your Description")
+      meta(name="author", content="Your Name")
+
+    meta(
+      name="apple-mobile-web-app-capable"
+      content="yes")
+    meta(
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent")
+    meta(
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+    link(rel="stylesheet", href="../../css/reveal.css")
+    //- Include a theme block to choose a new theme from within the template
+    block theme
+      link#theme(rel="stylesheet", href="../../css/theme/black.css")
+
+    //- Code yntax highlighting
+    link(rel="stylesheet", href="../../lib/css/zenburn.css")
+
+    //- Additional non-reveal styles
+    block styles
+
+    //- Printing and PDF exports
+    script.
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+
+    <!--[if lt IE 9]>
+    script(src="../../lib/js/html5shiv.js")
+    <![endif]-->
+
+  body
+    .reveal
+      .slides
+        //- Any element in this block is displayed in/as a slide
+        block slides
+    
+    //- Things that should be available on -every- slide, like footers, etc.
+    block extras
+
+    script(src="../../lib/js/head.min.js")
+    script(src="../../js/reveal.js")
+
+    //-
+      Replace to change the reveal.js configuration for the presentation, including addition of plugins. What's here is 
+      the default configuration from the distribution's index.html file.
+    block configuration
+      script.
+        Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+
+          transition: 'slide',
+
+          dependencies: [
+            { src: '../../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../../plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+            { src: '../../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+            { src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../../plugin/zoom-js/zoom.js', async: true },
+            { src: '../../plugin/notes/notes.js', async: true }
+          ]
+        });
+
+    //- Any additional scripts
+    block scripts

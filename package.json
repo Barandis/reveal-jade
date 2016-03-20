@@ -1,5 +1,5 @@
 {
-  "name": "reveal",
+  "name": "reveal-gulp",
   "version": "1.0.0",
   "description": "Gulp-based reveal.js clone incorprating Jade for authoring",
   "keywords": [
@@ -11,8 +11,16 @@
   ],
   "author": "Thomas Otterson",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Barandis/reveal-gulp.git"
+  },
   "devDependencies": {
+    "del": "^2.2.0",
     "gulp": "^3.9.1",
-    "require-dir": "^0.3.0"
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.3.1",
+    "require-dir": "^0.3.0",
+    "yargs": "^4.3.1"
   }
 }
