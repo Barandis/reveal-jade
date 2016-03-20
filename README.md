@@ -5,7 +5,7 @@ better for me, especially since I'm planning on writing many presentations in th
 basically two sorts:
 
 * Allow for sensible organization of multiple presentations
-* Use Jade for authoring presentations
+* Use [Jade][jade] for authoring presentations
 
 The stock reveal.js includes one `index.html` file that is your presentation, and the server is basically set up to 
 read only that `index.html` file. While this isn't too hard to get around, I wanted to create an organized approach 
@@ -141,3 +141,9 @@ elements in a slide.
   doesn't act like the default.
 
 Both of these (and anything else I find) should be fixed soon.
+
+[reveal]: https://github.com/hakimel/reveal.js
+[jade]: http://jade-lang.com/
+[markdown]: https://daringfireball.net/projects/markdown/
+[grunt]: http://gruntjs.com/
+[gulp]: http://gulpjs.com/
